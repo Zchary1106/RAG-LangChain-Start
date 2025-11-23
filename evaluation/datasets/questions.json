@@ -1,0 +1,16 @@
+[
+  {
+    "question": "What is RAG?",
+    "ground_truth": "RAG stands for Retrieval-Augmented Generation and improves answer accuracy by retrieving knowledge base context for the LLM.",
+    "contexts": [
+      "RAG combines retrieval and generation so the model can reference factual knowledge base content."
+    ]
+  },
+  {
+    "question": "Why use hybrid retrieval?",
+    "ground_truth": "Hybrid retrieval blends vector and keyword matching to capture both semantic and exact signals, which boosts recall.",
+    "contexts": [
+      "Hybrid search often improves accuracy by 20-40 percent."
+    ]
+  }
+]

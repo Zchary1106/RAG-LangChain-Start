@@ -1,0 +1,30 @@
+{
+  "dataset": "questions.json",
+  "dataset_path": "evaluation/datasets/questions.json",
+  "size": 2,
+  "created_at": "2025-11-18T00:00:00Z",
+  "api_base": "http://localhost:8000",
+  "tag": "sample",
+  "metrics": {
+    "faithfulness": 0.91,
+    "answer_relevancy": 0.88,
+    "context_precision": 0.79
+  },
+  "records": [
+    {
+      "question": "What is RAG?",
+      "answer": "RAG refers to retrieval-augmented generation, which retrieves knowledge base facts so the LLM can answer more accurately.",
+      "contexts": [
+        "RAG combines retrieval and generation so the model can reference factual knowledge base content."
+      ],
+      "ground_truth": "RAG stands for Retrieval-Augmented Generation and improves answer accuracy by retrieving knowledge base context for the LLM."
+    }
+  ],
+  "ragas": {
+    "results": {
+      "faithfulness": 0.91,
+      "answer_relevancy": 0.88,
+      "context_precision": 0.79
+    }
+  }
+}

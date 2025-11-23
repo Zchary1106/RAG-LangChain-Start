@@ -1,0 +1,54 @@
+
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Local config files (keep example files)
+configs/config.yaml
+
+# Data and vector stores (optional - uncomment if you want to ignore them)
+# data/vectorstores/
+# test/chroma.sqlite3
+
+# Logs
+logs/
+*.log
+
+# Environment-specific files
+.env.local
+.env.*.local
+
+# LangChain specific
+.langchain/

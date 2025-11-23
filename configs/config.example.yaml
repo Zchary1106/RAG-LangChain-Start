@@ -1,0 +1,61 @@
+model:
+  llm: "gpt-4o"
+  embedding: "text-embedding-3-large"
+  temperature: 0.15
+  azure_endpoint: "https://your-resource-name.openai.azure.com"
+  azure_api_version: "2024-02-15-preview"
+  azure_chat_deployment: "gpt4o-chat"
+  azure_embedding_deployment: "gpt4o-embed"
+
+chunking:
+  type: "recursive"  # options: recursive, semantic, table
+  size: 500
+  overlap: 100
+
+vector_store:
+  type: "chroma"  # options: chroma, faiss, qdrant
+  persist_path: "./data/vectorstores/default"
+  collection_name: "langchain_rag"
+  host: null
+  port: null
+  api_key: null
+
+retrieval:
+  strategy: "hybrid"  # options: vector, bm25, hybrid, router
+  top_k: 4
+  reranker: "bge-reranker-large"  # optional (set to cohere model for Cohere reranker)
+  reranker_top_k: 4
+  router_enabled: true
+
+router_rules:
+  - name: "code"
+    keywords: ["code", "function", "api", "error"]
+    strategy: "bm25"
+    chain: "map_reduce"
+  - name: "business"
+    keywords: ["business", "marketing", "product", "sales"]
+    strategy: "hybrid"
+    chain: "standard"
+
+paths:
+  upload_dir: "./data/uploads"
+  tmp_dir: "./data/tmp"
+
+documents:
+  allowed_extensions:
+    - ".pdf"
+    - ".docx"
+    - ".md"
+    - ".txt"
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+
+streamlit:
+  port: 8501
+  api_base: "http://localhost:8000"
+
+evaluation:
+  dataset_path: "./evaluation/datasets/questions.json"
+  output_dir: "./evaluation/reports"
